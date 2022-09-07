@@ -3,7 +3,7 @@ import { useConnection } from 'contexts/connection';
 import { ConnectionTypes } from 'contexts/connection/reducer';
 import { Button } from '@material-tailwind/react';
 import { useAlert } from 'contexts/alert';
-import { connected, disconnected, hasDisconnected } from 'utils';
+import { connected, disconnected, hasDisconnected, isFirstTimeUser } from 'utils';
 
 export default function ConnectWallet() {
   const [state, dispatch] = useConnection();
@@ -12,7 +12,7 @@ export default function ConnectWallet() {
 
   async function connectWallet(): Promise<void> {
     //Show modal if user has manually disconnected previously
-    const starknet = await connect({ showList: Boolean(hasDisconnected()) });
+    const starknet = await connect({ showList: Boolean(hasDisconnected()) || isFirstTimeUser() });
     if (starknet) {
       await starknet.enable();
       dispatch({ type: ConnectionTypes.CONNECT, payload: starknet });

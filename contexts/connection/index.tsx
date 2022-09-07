@@ -13,6 +13,7 @@ const ConnectionProvider = ({ children }) => {
   useEffect(() => {
     async function silentConnect() {
       if (hasDisconnected()) {
+        console.log('return')
         return;
       }
       const starknet = await connect({ showList: false });

@@ -8,14 +8,19 @@ export const ellipse = (address: string = '', width: number = 4) => {
 };
 
 export const connected = (): void => {
-  localStorage.removeItem(LOCAL_STORAGE.DISCONNECTED);
+  localStorage.setItem(LOCAL_STORAGE.DISCONNECTED, 'FALSE');
 };
 
 export const disconnected = () => {
   localStorage.setItem(LOCAL_STORAGE.DISCONNECTED, 'TRUE');
 };
 
-export const hasDisconnected = (): Boolean => {
+export const hasDisconnected = (): boolean => {
   const value = localStorage.getItem(LOCAL_STORAGE.DISCONNECTED);
-  return value === 'TRUE' || value === null;
+  return value === 'TRUE';
+};
+
+export const isFirstTimeUser = (): boolean => {
+  const value = localStorage.getItem(LOCAL_STORAGE.DISCONNECTED);
+  return value === null;
 };
