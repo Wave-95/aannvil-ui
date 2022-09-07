@@ -33,7 +33,13 @@ export default function AccountMenu() {
         <MenuHandler>
           <Button className="flex space-x-3 border-blue-500/80" variant="outlined">
             <HamburgerIcon className="h-4 w-4 fill-gray-700" />
-            {isConnected ? <Image className="h-4 w-4" src={icon} alt="wallet-provider-icon"/> : <UserIcon className="h-4 w-4 fill-gray-700" />}
+            <div className="h-4 w-4">
+              {isConnected ? (
+                <Image width="22" height="22" src={icon} alt="wallet-provider-icon" />
+              ) : (
+                <UserIcon className="fill-gray-700" />
+              )}
+            </div>
           </Button>
         </MenuHandler>
       </Tooltip>

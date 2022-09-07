@@ -17,12 +17,16 @@ export default function Home() {
             <Typography variant="h1" className="font-bold text-4xl max-w-screen-sm">
               Build on StarkNet
             </Typography>
-            <Image
-              className="h-12 w-12 sm:block hidden"
-              src="https://starkware.co/wp-content/uploads/2021/07/Group-177.svg"
-              data-src="https://starkware.co/wp-content/uploads/2021/07/Group-177.svg"
-              alt="starknet-logo"
-            />
+            <div>
+              <Image
+                width="50"
+                height="50"
+                className="sm:block hidden"
+                src="https://starkware.co/wp-content/uploads/2021/07/Group-177.svg"
+                data-src="https://starkware.co/wp-content/uploads/2021/07/Group-177.svg"
+                alt="starknet-logo"
+              />
+            </div>
           </div>
           <p className="text-2xl max-w-screen-sm text-gray-600">
             Easily configure, deploy, and maintain your own smart contracts on StarkNet. No code needed.
