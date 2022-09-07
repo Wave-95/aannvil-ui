@@ -17,5 +17,5 @@ export const disconnected = () => {
 
 export const hasDisconnected = (): Boolean => {
   const value = localStorage.getItem(LOCAL_STORAGE.DISCONNECTED);
-  return value === 'TRUE';
+  return value === 'TRUE' || value === null;
 };
