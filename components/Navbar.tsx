@@ -53,24 +53,26 @@ export default function Navbar() {
   );
 
   return (
-    <div className="absolute left-2/4 z-[999] my-4 flex w-full -translate-x-2/4 flex-wrap items-center lg:fixed mt-0 max-w-full border-b border-blue-gray-50">
-      <nav className="block backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border border-white/80 w-full max-w-full rounded-none px-6 bg-white text-white py-4 pl-6 pr-5 lg:py-2">
-        <div className="flex w-full items-center !justify-between text-[#1A237E] !text-blue-gray-900 mx-auto !max-w-[1440px]">
-          <Link
-            className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0 text-gray-700"
-            href="/"
-          >
-            Aannvil
-          </Link>
-          <p className="ml-3 text-xs leading-5 font-medium text-blue-800 dark:text-sky-400 bg-blue-50 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20">
-            Goerli Testnet
-          </p>
-          <div className="relative hidden lg:flex items-center ml-auto space-x-6">
-            <NavList />
-            <AccountMenu />
+    <div className="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-white/95 supports-backdrop-blur:bg-white/60 dark:bg-transparent border-b border-gray-900/10">
+      <div className="max-w-8xl mx-auto">
+        <div className="py-4 lg:px-8 dark:border-slate-300/10 mx-4 lg:mx-0">
+          <div className="relative flex items-center">
+            <Link
+              className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0 text-gray-700"
+              href="/"
+            >
+              Aannvil
+            </Link>
+            <p className="ml-3 text-xs leading-5 font-medium text-blue-800 dark:text-sky-400 bg-blue-50 rounded-full py-1 px-3 hidden xl:flex items-center hover:bg-sky-400/20">
+              Goerli Testnet
+            </p>
+            <div className="relative hidden lg:flex items-center ml-auto space-x-6">
+              <NavList />
+              <AccountMenu />
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   );
 }
