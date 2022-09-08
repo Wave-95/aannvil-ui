@@ -10,11 +10,15 @@ export default function CreateERC20() {
 
   const Heading = () => {
     return (
-      <div>
-        <Typography variant="h6" className="text-blue-500">ERC-20</Typography>
+      <header>
+        <Typography variant="h6" className="text-blue-500">
+          ERC-20
+        </Typography>
         <Typography variant="h3" className="capitalize">{`${pid} Template`}</Typography>
-        <Typography variant="subtitle">Deploy a standard ERC-20 token smart contract on StarkNet.</Typography>
-      </div>
+        <Typography variant="subtitle" className="block">
+          Deploy a standard ERC-20 token smart contract on StarkNet.
+        </Typography>
+      </header>
     );
   };
 
@@ -25,9 +29,7 @@ export default function CreateERC20() {
         <meta name="description" content="Deploy your own smart contracts on StarkNet" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <Heading />
-      </div>
+      <Heading />
     </Fragment>
   );
 }

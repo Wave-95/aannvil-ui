@@ -3,6 +3,8 @@ import Footer from '../components/Footer';
 import Container from 'components/Container';
 import { Typography } from '@material-tailwind/react';
 import Link from 'next/link';
+import ExternalLinkIcon from '../Icons/ExternalLink';
+
 const ERC721Presets = [
   { name: 'MintableBurnable', href: '/create/erc721/mintable_burnable' },
   { name: 'MintablePausable', href: '/create/erc721/mintable_pausable' },
@@ -12,8 +14,8 @@ const ERC721Presets = [
 
 const ERC20Presets = [
   { name: 'Base', href: '/create/erc20/base' },
-  { name: 'Burnable', href: '/create/erc20/burnable' },
   { name: 'Mintable', href: '/create/erc20/mintable' },
+  { name: 'Burnable', href: '/create/erc20/burnable' },
   { name: 'Pausable', href: '/create/erc20/pausable' },
   { name: 'Upgradeable', href: '/create/erc20/upgradeable' },
   { name: 'Aannvil', href: '/create/erc20/Aannvil' },
@@ -49,6 +51,25 @@ const Sidebar = () => {
           <div className="h-8 dark:from-slate-900" />
         </div>
         <ul className="space-y-8">
+          <li className="space-y-2">
+            <Link href="/create">
+              <a className="block text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300">
+                Overview
+              </a>
+            </Link>
+            <Link href="https://github.com/Wave-95/anvil-contracts" passHref>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+              >
+                <div className="flex items-center space-x-1">
+                  <span>Source Code</span>
+                  <ExternalLinkIcon className="h-4 w-4" />
+                </div>
+              </a>
+            </Link>
+          </li>
           <Section sectionTitle="ERC-20 Tokens" sectionItems={ERC20Presets} />
           <Section sectionTitle="ERC-721 Tokens" sectionItems={ERC721Presets} />
         </ul>
