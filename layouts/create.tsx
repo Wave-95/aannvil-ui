@@ -5,6 +5,15 @@ import { Typography } from '@material-tailwind/react';
 import Link from 'next/link';
 import ExternalLinkIcon from '../Icons/ExternalLink';
 
+const ERC20Presets = [
+  { name: 'Basic', href: '/create/erc20/basic' },
+  { name: 'Mintable', href: '/create/erc20/mintable' },
+  { name: 'Burnable', href: '/create/erc20/burnable' },
+  { name: 'Pausable', href: '/create/erc20/pausable' },
+  { name: 'Upgradeable', href: '/create/erc20/upgradeable' },
+  { name: 'Aannvil', href: '/create/erc20/Aannvil' },
+];
+
 const ERC721Presets = [
   { name: 'MintableBurnable', href: '/create/erc721/mintable_burnable' },
   { name: 'MintablePausable', href: '/create/erc721/mintable_pausable' },
@@ -12,14 +21,7 @@ const ERC721Presets = [
   { name: 'Claimable', href: '/create/erc721/claimable' },
 ];
 
-const ERC20Presets = [
-  { name: 'Base', href: '/create/erc20/base' },
-  { name: 'Mintable', href: '/create/erc20/mintable' },
-  { name: 'Burnable', href: '/create/erc20/burnable' },
-  { name: 'Pausable', href: '/create/erc20/pausable' },
-  { name: 'Upgradeable', href: '/create/erc20/upgradeable' },
-  { name: 'Aannvil', href: '/create/erc20/Aannvil' },
-];
+const ERC1155Presets = [{ name: 'Basic', href: '/create/erc1155/basic' }];
 
 const Sidebar = () => {
   const Section = ({ sectionTitle, sectionItems, ...props }) => {
@@ -70,8 +72,9 @@ const Sidebar = () => {
               </a>
             </Link>
           </li>
-          <Section sectionTitle="ERC-20 Tokens" sectionItems={ERC20Presets} />
-          <Section sectionTitle="ERC-721 Tokens" sectionItems={ERC721Presets} />
+          <Section sectionTitle="ERC20 Tokens" sectionItems={ERC20Presets} />
+          <Section sectionTitle="ERC721 Tokens" sectionItems={ERC721Presets} />
+          <Section sectionTitle="ERC1155 Tokens" sectionItems={ERC1155Presets} />
         </ul>
       </nav>
     </div>

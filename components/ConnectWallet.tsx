@@ -5,7 +5,7 @@ import { Button } from '@material-tailwind/react';
 import { useAlert } from 'contexts/alert';
 import { connected, disconnected, hasDisconnected, isFirstTimeUser } from 'utils';
 
-export default function ConnectWallet() {
+export default function ConnectWallet({ ...props }) {
   const [state, dispatch] = useConnection();
   const { setError } = useAlert();
   const { isConnected } = state;
@@ -29,7 +29,7 @@ export default function ConnectWallet() {
   }
 
   return (
-    <Button onClick={isConnected ? disconnectWallet : connectWallet} className="min-w-14">
+    <Button onClick={isConnected ? disconnectWallet : connectWallet} className="min-w-14" {...props}>
       {isConnected ? 'Disconnect Wallet' : 'Connect Wallet'}
     </Button>
   );

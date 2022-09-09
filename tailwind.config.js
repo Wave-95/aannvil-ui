@@ -6,5 +6,5 @@ module.exports = withMT({
   theme: {
     extend: { colors: { primary: '#627E8B' }, maxWidth: { '8xl': '1440px' } },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 });

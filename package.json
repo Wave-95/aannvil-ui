@@ -19,6 +19,7 @@
     "starknet": "^3.18.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.7",
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.18",
     "autoprefixer": "^10.4.8",
